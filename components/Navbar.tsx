@@ -51,6 +51,7 @@ export default function Navbar() {
                     {/* Logo */}
                     <Link
                         href="/"
+                        locale={locale}
                         className="group flex items-center gap-3"
                     >
                         {/* HUD Logo Mark */}
@@ -82,9 +83,10 @@ export default function Navbar() {
                                 <Link
                                     key={item.key}
                                     href={item.href}
+                                    locale={locale}
                                     className={`nav-link relative px-4 py-2 transition-all duration-300 ${isActive
-                                            ? "text-[var(--primary-500)] text-shadow-glow"
-                                            : "text-[var(--text-muted)] hover:text-white"
+                                        ? "text-[var(--primary-500)] text-shadow-glow"
+                                        : "text-[var(--text-muted)] hover:text-white"
                                         }`}
                                 >
                                     {t(item.key)}

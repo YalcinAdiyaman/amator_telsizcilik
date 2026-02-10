@@ -1,6 +1,6 @@
 "use client";
 
-import { useTranslations } from "next-intl";
+import { useTranslations, useLocale } from "next-intl";
 import { useRef } from "react";
 import { motion, useInView, Variants } from "framer-motion";
 import { Link } from "@/i18n/routing";
@@ -144,7 +144,7 @@ export default function ModulesSection() {
                             whileHover={{ scale: 1.01 }}
                             className="group relative w-full perspective-1000"
                         >
-                            <Link href={module.href} className="block w-full">
+                            <Link href={module.href} locale={useLocale()} className="block w-full">
                                 {/* Glassmorphism Card Background */}
                                 <div className="absolute inset-0 bg-[var(--bg-card)]/60 backdrop-blur-xl rounded-2xl border border-[var(--border-default)] transition-all duration-300 group-hover:border-[var(--primary-500)]/50 group-hover:bg-[var(--bg-card)]/80 shadow-2xl overflow-hidden">
                                     {/* Technical Blueprint Overlay */}

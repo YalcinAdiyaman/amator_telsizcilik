@@ -1,11 +1,12 @@
 "use client";
 
-import { useTranslations } from "next-intl";
+import { useTranslations, useLocale } from "next-intl";
 import { Link } from "@/i18n/routing";
 import { Github, Twitter, Radio, Mail, Signal, MapPin, Globe } from "lucide-react";
 
 export default function Footer() {
     const t = useTranslations("Footer");
+    const locale = useLocale();
     const currentYear = new Date().getFullYear();
 
     return (
@@ -44,7 +45,7 @@ export default function Footer() {
                 <div className="grid md:grid-cols-4 gap-12 mb-16">
                     {/* Brand column */}
                     <div className="md:col-span-1">
-                        <Link href="/" className="flex items-center gap-3 mb-6 group">
+                        <Link href="/" locale={locale} className="flex items-center gap-3 mb-6 group">
                             <div className="relative w-10 h-10 flex items-center justify-center">
                                 <div className="absolute inset-0 border-2 border-[var(--primary-500)] rotate-45 group-hover:rotate-90 transition-transform duration-500" />
                                 <Radio className="w-5 h-5 text-[var(--primary-500)]" />
@@ -86,17 +87,17 @@ export default function Footer() {
                         </h4>
                         <ul className="space-y-3 font-mono text-sm">
                             <li>
-                                <Link href="/atlas" className="text-[var(--text-muted)] hover:text-[var(--primary-500)] hover:translate-x-2 transition-all block">
+                                <Link href="/atlas" locale={locale} className="text-[var(--text-muted)] hover:text-[var(--primary-500)] hover:translate-x-2 transition-all block">
                                     &gt; ATLAS_MAP
                                 </Link>
                             </li>
                             <li>
-                                <Link href="/atolye" className="text-[var(--text-muted)] hover:text-[var(--primary-500)] hover:translate-x-2 transition-all block">
+                                <Link href="/atolye" locale={locale} className="text-[var(--text-muted)] hover:text-[var(--primary-500)] hover:translate-x-2 transition-all block">
                                     &gt; ATOLYE_LAB
                                 </Link>
                             </li>
                             <li>
-                                <Link href="/akademi" className="text-[var(--text-muted)] hover:text-[var(--primary-500)] hover:translate-x-2 transition-all block">
+                                <Link href="/akademi" locale={locale} className="text-[var(--text-muted)] hover:text-[var(--primary-500)] hover:translate-x-2 transition-all block">
                                     &gt; ACADEMY_DB
                                 </Link>
                             </li>
