@@ -1,0 +1,812 @@
+@import "tailwindcss";
+
+/* ============================================
+   WARFRAME "THE OLD PEACE" İLHAMLI TASARIM SİSTEMİ
+   ============================================
+   
+   📌 Tasarım Felsefesi:
+   - Derin uzay mavisi ve koyu gri arka planlar
+   - HUD tarzı parlak vurgular (elektrik mavisi / amber)
+   - Yüksek kontrast, sinematik atmosfer
+   - Futuristik, mistik ve premium his
+   
+   📌 Renk Paleti:
+   - Primary: Elektrik Mavisi (#00D4FF)
+   - Secondary: Amber/Altın (#FFB800)
+   - Arka Plan: Derin Uzay Lacivert (#0A0E1A)
+   - Yüzey: Koyu Gri tonları
+   - Vurgular: Neon parıltılar
+============================================ */
+
+/* ==========================================
+   🎨 CSS DEĞİŞKENLERİ (CSS VARIABLES)
+   ========================================== */
+:root {
+  /* === ARKA PLAN RENKLERİ === */
+  --bg-void: #030508;
+  /* En derin karanlık - uzay boşluğu */
+  --bg-deep: #0A0E1A;
+  /* Ana arka plan - derin lacivert */
+  --bg-surface: #0F1629;
+  /* Kart/panel arka planı */
+  --bg-elevated: #151B2E;
+  /* Yükseltilmiş yüzeyler */
+  --bg-hover: #1A2238;
+  /* Hover durumu */
+
+  /* === METİN RENKLERİ === */
+  --text-primary: #FFFFFF;
+  /* Ana metin - beyaz */
+  --text-secondary: #A0AEC0;
+  /* İkincil metin - gri-mavi */
+  --text-muted: #4A5568;
+  /* Soluk metin */
+  --text-accent: #00D4FF;
+  /* Vurgulu metin - elektrik mavisi */
+
+  /* === PRİMER RENK - ELEKTRİK MAVİSİ === */
+  --primary-50: #E6FAFF;
+  --primary-100: #B3F0FF;
+  --primary-200: #80E6FF;
+  --primary-300: #4DDBFF;
+  --primary-400: #1AD1FF;
+  --primary-500: #00D4FF;
+  /* ANA PRİMER */
+  --primary-600: #00A8CC;
+  --primary-700: #007C99;
+  --primary-800: #005066;
+  --primary-900: #002433;
+
+  /* === SEKONDER RENK - AMBER/ALTIN === */
+  --secondary-50: #FFF9E6;
+  --secondary-100: #FFECB3;
+  --secondary-200: #FFDF80;
+  --secondary-300: #FFD24D;
+  --secondary-400: #FFC51A;
+  --secondary-500: #FFB800;
+  /* ANA SEKONDER */
+  --secondary-600: #CC9300;
+  --secondary-700: #996E00;
+  --secondary-800: #664900;
+  --secondary-900: #332500;
+
+  /* === DURUM RENKLERİ === */
+  --success: #00FF88;
+  --warning: #FFB800;
+  --error: #FF3366;
+  --info: #00D4FF;
+
+  /* === HUD PARILTILARI (GLOW EFEKTLER) === */
+  --glow-primary: 0 0 20px rgba(0, 212, 255, 0.5);
+  --glow-primary-intense: 0 0 40px rgba(0, 212, 255, 0.8);
+  --glow-secondary: 0 0 20px rgba(255, 184, 0, 0.5);
+  --glow-secondary-intense: 0 0 40px rgba(255, 184, 0, 0.8);
+  --glow-text: 0 0 10px rgba(0, 212, 255, 0.3);
+
+  /* === BORDER RENKLERİ === */
+  --border-subtle: rgba(0, 212, 255, 0.1);
+  --border-default: rgba(0, 212, 255, 0.2);
+  --border-strong: rgba(0, 212, 255, 0.4);
+  --border-glow: rgba(0, 212, 255, 0.6);
+
+  /* === OVERLAY VE GLASSMORPHISM === */
+  --overlay-dark: rgba(3, 5, 8, 0.8);
+  --overlay-blur: rgba(10, 14, 26, 0.7);
+  --glass-bg: rgba(15, 22, 41, 0.6);
+  --glass-border: rgba(0, 212, 255, 0.15);
+
+  /* === GRADYANLAR === */
+  --gradient-hero: linear-gradient(180deg, var(--bg-void) 0%, var(--bg-deep) 50%, var(--bg-surface) 100%);
+  --gradient-card: linear-gradient(135deg, var(--bg-surface) 0%, var(--bg-elevated) 100%);
+  --gradient-glow: linear-gradient(90deg, transparent, var(--primary-500), transparent);
+  --gradient-text: linear-gradient(135deg, var(--primary-400), var(--secondary-500));
+
+  /* === TİPOGRAFİ === */
+  --font-display: var(--font-geist-sans), 'Inter', system-ui, sans-serif;
+  --font-body: var(--font-geist-sans), 'Inter', system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), 'JetBrains Mono', monospace;
+
+  /* Futuristik letter-spacing */
+  --tracking-tight: -0.02em;
+  --tracking-normal: 0;
+  --tracking-wide: 0.1em;
+  --tracking-wider: 0.2em;
+  --tracking-widest: 0.3em;
+
+  /* === ANİMASYON DEĞERLERİ === */
+  --transition-fast: 150ms ease;
+  --transition-normal: 300ms ease;
+  --transition-slow: 500ms ease;
+  --transition-reveal: 800ms cubic-bezier(0.16, 1, 0.3, 1);
+
+  /* === SPACING SİSTEMİ === */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --space-24: 6rem;
+  --space-32: 8rem;
+
+  /* === Z-INDEX KATMANLARI === */
+  --z-base: 0;
+  --z-dropdown: 100;
+  --z-sticky: 200;
+  --z-overlay: 300;
+  --z-modal: 400;
+  --z-toast: 500;
+}
+
+/* ==========================================
+   🎨 TAILWIND TEMA ENTEGRASYONU
+   ========================================== */
+@theme inline {
+  /* Arka plan renkleri */
+  --color-background: var(--bg-deep);
+  --color-foreground: var(--text-primary);
+
+  /* Font aileleri */
+  --font-sans: var(--font-display);
+  --font-mono: var(--font-mono);
+
+  /* Primer renkler */
+  --color-primary-50: var(--primary-50);
+  --color-primary-100: var(--primary-100);
+  --color-primary-200: var(--primary-200);
+  --color-primary-300: var(--primary-300);
+  --color-primary-400: var(--primary-400);
+  --color-primary-500: var(--primary-500);
+  --color-primary-600: var(--primary-600);
+  --color-primary-700: var(--primary-700);
+  --color-primary-800: var(--primary-800);
+  --color-primary-900: var(--primary-900);
+
+  /* Sekonder renkler */
+  --color-secondary-50: var(--secondary-50);
+  --color-secondary-100: var(--secondary-100);
+  --color-secondary-200: var(--secondary-200);
+  --color-secondary-300: var(--secondary-300);
+  --color-secondary-400: var(--secondary-400);
+  --color-secondary-500: var(--secondary-500);
+  --color-secondary-600: var(--secondary-600);
+  --color-secondary-700: var(--secondary-700);
+  --color-secondary-800: var(--secondary-800);
+  --color-secondary-900: var(--secondary-900);
+}
+
+/* ==========================================
+   🌐 GLOBAL STİLLER
+   ========================================== */
+
+/* Smooth scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Ana body stilleri */
+body {
+  background: var(--bg-deep);
+  color: var(--text-primary);
+  font-family: var(--font-display);
+  line-height: 1.6;
+  min-height: 100vh;
+  overflow-x: hidden;
+
+  /* Subtle uzay dokusu */
+  background-image:
+    radial-gradient(ellipse at 20% 30%, rgba(0, 212, 255, 0.03) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 70%, rgba(255, 184, 0, 0.02) 0%, transparent 50%);
+}
+
+/* Seçim rengi */
+::selection {
+  background: var(--primary-500);
+  color: var(--bg-void);
+}
+
+/* Scrollbar stilleri */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-void);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary-700);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary-500);
+}
+
+/* ==========================================
+   🔤 TİPOGRAFİ STİLLERİ
+   ========================================== */
+
+/* Futuristik başlıklar */
+.heading-display {
+  font-family: var(--font-display);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wider);
+  color: var(--text-primary);
+}
+
+/* HUD tarzı parlayan metin */
+.text-glow {
+  text-shadow: var(--glow-text);
+}
+
+.text-glow-intense {
+  text-shadow:
+    0 0 10px var(--primary-500),
+    0 0 20px var(--primary-500),
+    0 0 30px var(--primary-500);
+}
+
+/* Gradient metin */
+.text-gradient {
+  background: var(--gradient-text);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ==========================================
+   📦 KART VE PANEL STİLLERİ
+   ========================================== */
+
+/* Glassmorphism panel */
+.glass-panel {
+  background: var(--glass-bg);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--glass-border);
+  border-radius: 12px;
+}
+
+/* HUD tarzı kart */
+.hud-card {
+  background: var(--gradient-card);
+  border: 1px solid var(--border-default);
+  border-radius: 8px;
+  position: relative;
+  overflow: hidden;
+  transition: all var(--transition-normal);
+}
+
+.hud-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: var(--gradient-glow);
+  opacity: 0;
+  transition: opacity var(--transition-normal);
+}
+
+.hud-card:hover {
+  border-color: var(--border-strong);
+  box-shadow: var(--glow-primary);
+  transform: translateY(-4px);
+}
+
+.hud-card:hover::before {
+  opacity: 1;
+}
+
+/* ==========================================
+   🔘 BUTON STİLLERİ
+   ========================================== */
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.875rem 2rem;
+  background: transparent;
+  color: var(--primary-500);
+  border: 2px solid var(--primary-500);
+  font-family: var(--font-display);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wide);
+  cursor: pointer;
+  transition: all var(--transition-normal);
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-primary::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--primary-500);
+  transform: translateX(-100%);
+  transition: transform var(--transition-normal);
+  z-index: -1;
+}
+
+.btn-primary:hover {
+  color: var(--bg-void);
+  box-shadow: var(--glow-primary);
+}
+
+.btn-primary:hover::before {
+  transform: translateX(0);
+}
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.875rem 2rem;
+  background: var(--secondary-500);
+  color: var(--bg-void);
+  border: 2px solid var(--secondary-500);
+  font-family: var(--font-display);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wide);
+  cursor: pointer;
+  transition: all var(--transition-normal);
+}
+
+.btn-secondary:hover {
+  background: var(--secondary-400);
+  box-shadow: var(--glow-secondary);
+}
+
+/* ==========================================
+   ✨ ANİMASYONLAR
+   ========================================== */
+
+/* Glitch Effect */
+@keyframes glitch {
+  0% {
+    transform: translate(0);
+    text-shadow: none;
+  }
+
+  20% {
+    transform: translate(-2px, 2px);
+    text-shadow: 2px 0 var(--error), -2px 0 var(--primary-500);
+  }
+
+  40% {
+    transform: translate(2px, -2px);
+    text-shadow: -2px 0 var(--warning), 2px 0 var(--primary-500);
+  }
+
+  60% {
+    transform: translate(0);
+    text-shadow: none;
+  }
+
+  80% {
+    transform: translate(2px, 2px);
+    text-shadow: 2px 0 var(--error), -2px 0 var(--primary-500);
+  }
+
+  100% {
+    transform: translate(0);
+    text-shadow: none;
+  }
+}
+
+@keyframes glitch-skew {
+  0% {
+    transform: skew(0deg);
+  }
+
+  20% {
+    transform: skew(-5deg);
+  }
+
+  40% {
+    transform: skew(5deg);
+  }
+
+  60% {
+    transform: skew(0deg);
+  }
+
+  80% {
+    transform: skew(-2deg);
+  }
+
+  100% {
+    transform: skew(0deg);
+  }
+}
+
+.animate-glitch {
+  animation: glitch 2.5s infinite linear alternate-reverse;
+}
+
+.animate-glitch:hover {
+  animation: glitch 0.3s infinite linear alternate-reverse, glitch-skew 0.3s infinite linear alternate-reverse;
+}
+
+/* Global Radar Grid */
+.bg-radar-grid {
+  background-image:
+    linear-gradient(rgba(0, 212, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 212, 255, 0.03) 1px, transparent 1px);
+  background-size: 50px 50px;
+  mask-image: radial-gradient(circle at center, black 40%, transparent 100%);
+  -webkit-mask-image: radial-gradient(circle at center, black 40%, transparent 100%);
+}
+
+/* Reveal animasyonu */
+@keyframes reveal {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Pulse glow */
+@keyframes pulse-glow {
+
+  0%,
+  100% {
+    box-shadow: var(--glow-primary);
+  }
+
+  50% {
+    box-shadow: var(--glow-primary-intense);
+  }
+}
+
+/* Scan line efekti */
+@keyframes scan-line {
+  0% {
+    transform: translateY(-100%);
+  }
+
+  100% {
+    transform: translateY(100%);
+  }
+}
+
+/* Float animasyonu */
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Utility classes */
+.animate-reveal {
+  animation: reveal var(--transition-reveal) forwards;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Leaflet Overrides */
+.leaflet-popup-content-wrapper,
+.leaflet-popup-tip {
+  background: rgba(10, 10, 12, 0.9) !important;
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--primary-500);
+  color: white !important;
+  border-radius: 2px !important;
+  box-shadow: 0 0 20px rgba(0, 212, 255, 0.2) !important;
+}
+
+.leaflet-popup-close-button {
+  color: var(--primary-500) !important;
+}
+
+.marker-pin {
+  width: 30px;
+  height: 30px;
+  border-radius: 50% 50% 50% 0;
+  background: var(--primary-500);
+  position: absolute;
+  transform: rotate(-45deg);
+  left: 50%;
+  top: 50%;
+  margin: -15px 0 0 -15px;
+}
+
+/* ==========================================
+   🔲 BORDER VE ÇERÇEVE STİLLERİ
+   ========================================== */
+
+/* HUD köşe çerçeveleri */
+.hud-frame {
+  position: relative;
+}
+
+.hud-frame::before,
+.hud-frame::after {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--primary-500);
+}
+
+.hud-frame::before {
+  top: 0;
+  left: 0;
+  border-right: none;
+  border-bottom: none;
+}
+
+.hud-frame::after {
+  bottom: 0;
+  right: 0;
+  border-left: none;
+  border-top: none;
+}
+
+/* Separator çizgisi */
+.hud-separator {
+  height: 1px;
+  background: linear-gradient(90deg,
+      transparent,
+      var(--primary-500) 20%,
+      var(--primary-500) 80%,
+      transparent);
+}
+
+/* ==========================================
+   📱 RESPONSİVE YARDIMCILAR
+   ========================================== */
+
+/* Container max-width */
+.container-wide {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 var(--space-4);
+}
+
+@media (min-width: 768px) {
+  .container-wide {
+    padding: 0 var(--space-8);
+  }
+}
+
+@media (min-width: 1024px) {
+  .container-wide {
+    padding: 0 var(--space-12);
+  }
+}
+
+/* ==========================================
+   🧭 NAVİGASYON STİLLERİ
+   ========================================== */
+
+/* Backdrop blur efekti - scroll sonrası aktif */
+.nav-blur {
+  background: var(--overlay-blur);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+/* Navigation link */
+.nav-link {
+  position: relative;
+  padding: 0.75rem 1.25rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--text-secondary);
+  transition: all var(--transition-normal);
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%) scaleX(0);
+  width: 80%;
+  height: 1px;
+  background: var(--primary-500);
+  transition: transform var(--transition-normal);
+}
+
+.nav-link:hover {
+  color: var(--primary-500);
+  text-shadow: var(--glow-text);
+}
+
+.nav-link:hover::after {
+  transform: translateX(-50%) scaleX(1);
+}
+
+/* ==========================================
+   🦸 HERO BÖLÜMÜ STİLLERİ
+   ========================================== */
+
+/* Hero title glow effect */
+.hero-title {
+  color: var(--text-primary);
+  text-shadow:
+    0 0 20px rgba(0, 212, 255, 0.3),
+    0 0 40px rgba(0, 212, 255, 0.2),
+    0 0 60px rgba(0, 212, 255, 0.1);
+}
+
+/* HUD frame for hero */
+.hud-frame-hero {
+  position: relative;
+}
+
+.hud-frame-hero::before,
+.hud-frame-hero::after {
+  content: '';
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  border: 1px solid var(--primary-500);
+  opacity: 0.6;
+}
+
+.hud-frame-hero::before {
+  top: 0;
+  left: 0;
+  border-right: none;
+  border-bottom: none;
+}
+
+.hud-frame-hero::after {
+  bottom: 0;
+  right: 0;
+  border-left: none;
+  border-top: none;
+}
+
+/* Star field background */
+.hero-stars {
+  background-image:
+    radial-gradient(1px 1px at 20px 30px, var(--primary-500), transparent),
+    radial-gradient(1px 1px at 40px 70px, var(--text-muted), transparent),
+    radial-gradient(1px 1px at 50px 160px, var(--primary-500), transparent),
+    radial-gradient(1px 1px at 90px 40px, var(--secondary-500), transparent),
+    radial-gradient(1px 1px at 130px 80px, var(--text-muted), transparent),
+    radial-gradient(1px 1px at 160px 120px, var(--primary-500), transparent),
+    radial-gradient(2px 2px at 200px 60px, var(--primary-400), transparent),
+    radial-gradient(1px 1px at 250px 140px, var(--text-muted), transparent);
+  background-repeat: repeat;
+  background-size: 300px 200px;
+  animation: twinkle 8s ease-in-out infinite;
+}
+
+@keyframes twinkle {
+
+  0%,
+  100% {
+    opacity: 0.4;
+  }
+
+  50% {
+    opacity: 0.7;
+  }
+}
+
+/* Grid overlay */
+.hero-grid {
+  background-image:
+    linear-gradient(var(--primary-700) 1px, transparent 1px),
+    linear-gradient(90deg, var(--primary-700) 1px, transparent 1px);
+  background-size: 80px 80px;
+}
+
+/* Scanlines effect */
+.hero-scanlines {
+  background: repeating-linear-gradient(0deg,
+      transparent,
+      transparent 2px,
+      rgba(0, 0, 0, 0.1) 2px,
+      rgba(0, 0, 0, 0.1) 4px);
+  pointer-events: none;
+}
+
+/* Scroll indicator */
+.scroll-indicator {
+  width: 24px;
+  height: 40px;
+  border: 2px solid var(--border-default);
+  border-radius: 12px;
+  position: relative;
+}
+
+.scroll-indicator-dot {
+  position: absolute;
+  top: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 4px;
+  height: 8px;
+  background: var(--primary-500);
+  border-radius: 2px;
+  animation: scroll-dot 2s ease-in-out infinite;
+}
+
+@keyframes scroll-dot {
+
+  0%,
+  100% {
+    transform: translateX(-50%) translateY(0);
+    opacity: 1;
+  }
+
+  50% {
+    transform: translateX(-50%) translateY(16px);
+    opacity: 0.3;
+  }
+}
+
+/* ==========================================
+   🎬 PARALLAX YARDIMCI STİLLERİ
+   ========================================== */
+
+/* Will-change optimizasyonu */
+.parallax-layer {
+  will-change: transform;
+  transform: translateZ(0);
+}
+
+/* Reduced motion desteği */
+@media (prefers-reduced-motion: reduce) {
+
+  .hero-stars,
+  .scroll-indicator-dot,
+  .animate-pulse-glow,
+  .animate-float {
+    animation: none;
+  }
+
+  .parallax-layer {
+    transform: none !important;
+  }
+}
+
+/* === CUSTOM ANIMATIONS === */
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 20s linear infinite;
+}

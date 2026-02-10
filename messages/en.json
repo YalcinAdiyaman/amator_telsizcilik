@@ -1,0 +1,282 @@
+{
+    "Meta": {
+        "title": "TA Radio Portal | Amateur Radio Hub",
+        "description": "Turkey's most comprehensive amateur radio resource. Premium portal equipped with ATLAS maps, ATÖLYE calculators, and AKADEMİ training modules."
+    },
+    "Hero": {
+        "title": "AMATEUR RADIO PORTAL",
+        "subtitle": "Advanced Tools. Global Connection. Unlimited Exploration.",
+        "cta": "START EXPLORING",
+        "scrollHint": "Scroll for more"
+    },
+    "Navigation": {
+        "home": "HOME",
+        "atlas": "ATLAS",
+        "atolye": "ATÖLYE",
+        "akademi": "AKADEMİ",
+        "language": "Language"
+    },
+    "Modules": {
+        "atlas": {
+            "title": "ATLAS",
+            "subtitle": "INTERACTIVE MAP",
+            "description": "Explore repeater stations, satellite positions, and global radio networks in real-time.",
+            "features": [
+                "Live Repeater Map",
+                "Satellite Tracking",
+                "Propagation Data"
+            ]
+        },
+        "atolye": {
+            "title": "ATÖLYE",
+            "subtitle": "ENGINEERING TOOLS",
+            "description": "Bring your projects to life with antenna design, RF calculations, and technical tools.",
+            "features": [
+                "Antenna Calculator",
+                "SWR Analysis",
+                "Band Plans"
+            ]
+        },
+        "akademi": {
+            "title": "AKADEMİ",
+            "subtitle": "TRAINING CENTER",
+            "description": "Interactive training modules from exam preparation to advanced techniques.",
+            "features": [
+                "Exam Simulator",
+                "CW Training",
+                "Video Lessons"
+            ]
+        }
+    },
+    "Stats": {
+        "repeaters": "Active Repeaters",
+        "users": "Users",
+        "countries": "Countries",
+        "uptime": "Uptime"
+    },
+    "Footer": {
+        "copyright": "© 2026 TA Radio Portal. All rights reserved.",
+        "callsign": "73 de TA3ABC",
+        "links": {
+            "privacy": "Privacy",
+            "terms": "Terms of Use",
+            "contact": "Contact"
+        }
+    },
+    "Common": {
+        "loading": "Loading...",
+        "error": "An error occurred",
+        "retry": "Retry",
+        "learnMore": "LEARN MORE",
+        "viewAll": "VIEW ALL"
+    },
+    "Atlas": {
+        "title": "ATLAS",
+        "subtitle": "INTERACTIVE MAP",
+        "coordinates": "COORDINATES",
+        "legend": "LEGEND",
+        "activeRelay": "ACTIVE RELAY",
+        "maintenanceRelay": "MAINTENANCE",
+        "targetLocked": "TARGET_LOCKED",
+        "status": "STATUS",
+        "freq": "FREQ",
+        "tone": "TONE",
+        "loc": "LOC",
+        "connectionEstablished": "CONNECTION_ESTABLISHED",
+        "spaceWeather": {
+            "title": "SPACE WEATHER",
+            "sfi": "SOLAR FLUX (SFI)",
+            "kIndex": "PLANETARY K-INDEX",
+            "aIndex": "A-INDEX",
+            "conditions": "PROPAGATION CONDITIONS"
+        },
+        "dxCluster": {
+            "title": "LIVE DX CLUSTER",
+            "spot": "DX SPOT",
+            "de": "DE",
+            "freq": "FRQ"
+        },
+        "matrixLog": {
+            "title": "MATRIX LOG",
+            "listening": "LISTENING...",
+            "traffic": "DMR TRAFFIC"
+        },
+        "loading": "Loading terrain data...",
+        "iss": {
+            "telemetry": "LIVE TELEMETRY",
+            "orbit": "ORBIT",
+            "lat": "LAT",
+            "lon": "LON"
+        },
+        "Meta": {
+            "title": "ATLAS | Interactive Radio Map",
+            "description": "Live amateur radio repeater map and satellite tracking system."
+        }
+    },
+    "Atolye": {
+        "title": "ATÖLYE",
+        "subtitle": "ENGINEERING TOOLS",
+        "description": "Professional radio calculations and engineering tools.",
+        "locked": "LOCKED_MODULE",
+        "tools": {
+            "dipole": {
+                "title": "DIPOLE_CALC",
+                "freqLabel": "FREQUENCY (MHz)",
+                "totalLength": "TOTAL LENGTH (L)",
+                "legLength": "LEG_LENGTH",
+                "invalidInput": "INVALID_INPUT",
+                "formula": "FORMULA: L = 142.5 / f (MHz)"
+            },
+            "swr": {
+                "title": "SWR_ANALYZER",
+                "swrLabel": "SWR VALUE",
+                "returnLoss": "RETURN LOSS",
+                "reflectionCoef": "REFLECTION COEF",
+                "match": "MATCH_STATUS",
+                "formula": "FORMULA: RL = -20 log10((SWR-1)/(SWR+1))"
+            },
+            "coax": {
+                "title": "CABLE LOSS CALC",
+                "label": "COAX CABLE LOSS CALCULATOR",
+                "cableType": "CABLE TYPE",
+                "frequency": "FREQUENCY (MHz)",
+                "length": "LENGTH (Meters)",
+                "power": "INPUT POWER (Watts)",
+                "loss": "LOSS (dB)",
+                "efficiency": "EFFICIENCY",
+                "outputPower": "OUTPUT POWER"
+            },
+            "bandplan": {
+                "title": "BAND PLAN",
+                "subtitle": "FREQUENCY ALLOCATION (TR/IARU R1)",
+                "spectrum": "FREQUENCY SPECTRUM",
+                "footer": "Data based on IARU Region 1 and National Frequency Plan. Check regulations for special cases."
+            },
+            "yagi": {
+                "title": "YAGI DESIGNER",
+                "label": "YAGI-UDA ANTENNA BUILDER",
+                "frequency": "FREQUENCY (MHz)",
+                "elements": "ELEMENT COUNT (3-7)",
+                "reflector": "REFLECTOR",
+                "driven": "DRIVEN ELEMENT",
+                "director": "DIRECTOR",
+                "boom": "BOOM LENGTH",
+                "gain": "EST. GAIN"
+            },
+            "battery": {
+                "title": "FIELD BATTERY EST.",
+                "label": "FIELD DAY BATTERY ESTIMATOR",
+                "capacity": "BATTERY CAPACITY (Ah)",
+                "voltage": "VOLTAGE (V)",
+                "txPower": "TX POWER (W)",
+                "rxCurrent": "RX CURRENT (A)",
+                "dutyCycle": "TX/RX DUTY CYCLE (%)",
+                "avgCurrent": "AVERAGE CURRENT",
+                "totalTime": "EST. RUNTIME (Hours)"
+            },
+            "rfsafety": {
+                "title": "RF SAFETY DISTANCE",
+                "label": "RF SAFETY DISTANCE (PUBLIC)",
+                "power": "OUTPUT POWER (Avg Watts)",
+                "gain": "ANTENNA GAIN (dBi)",
+                "frequency": "FREQUENCY (MHz)",
+                "minDistance": "MIN SAFE DISTANCE",
+                "uncontrolled": "GENERAL PUBLIC (UNCONTROLLED)",
+                "controlled": "OCCUPATIONAL (CONTROLLED)",
+                "note": "Calculated based on FCC OET-65 standards."
+            },
+            "qth": {
+                "title": "QTH / GRID CONVERTER",
+                "label": "GRID LOCATOR CONVERTER",
+                "inputLat": "LATITUDE",
+                "inputLng": "LONGITUDE",
+                "inputGrid": "MAIDENHEAD GRID",
+                "btnToGrid": "CONVERT TO GRID",
+                "btnToCoord": "CONVERT TO COORD"
+            },
+            "azimuth": {
+                "title": "AZIMUTH MAP",
+                "label": "BEAM HEADING FINDER",
+                "target": "TARGET LOC/COUNTRY",
+                "bearing": "BEARING"
+            }
+        }
+    },
+    "Academy": {
+        "title": "AKADEMİ",
+        "subtitle": "TRAINING CENTER",
+        "modules": {
+            "regulations": {
+                "title": "REGULATIONS",
+                "desc": "Legal Framework & Licensing"
+            },
+            "technical": {
+                "title": "TECHNICAL",
+                "desc": "Electronics & Propagation"
+            },
+            "operating": {
+                "title": "OPERATING",
+                "desc": "Protocols & Ethics"
+            }
+        },
+        "status": {
+            "locked": "LOCKED",
+            "unlocked": "AVAILABLE",
+            "start": "START_MODULE",
+            "progress": "PROGRESS"
+        },
+        "quiz": {
+            "title": "RANDOM_QUESTION",
+            "submit": "SUBMIT_ANSWER",
+            "correct": "CORRECT_ANSWER",
+            "wrong": "SIGNAL_LOST (WRONG)",
+            "next": "NEXT_DATA_PACKET"
+        },
+        "dashboard": {
+            "mandatory": "MANDATORY_MODULES",
+            "daily": "QUESTION_BANK",
+            "level": "LEVEL",
+            "xp": "XP",
+            "leaderboard": "LEADERBOARD_OFFLINE",
+            "lesson": "LESSON_VIEW",
+            "complete": "COMPLETE_LESSON",
+            "exam": {
+                "title": "EXAM SIMULATOR",
+                "result": "MISSION DEBRIEF",
+                "passed": "SUCCESS - MISSION ACCOMPLISHED",
+                "failed": "FAILED - SIGNAL LOST",
+                "finish": "FINISH EXAM",
+                "score": "SCORE",
+                "save": "SAVE SCORE",
+                "skip": "SKIP (NO SAVE)",
+                "categories": {
+                    "regulations": "REGULATIONS",
+                    "technical": "TECHNICAL",
+                    "operating": "OPERATING"
+                },
+                "focus": "FOCUS: {category}",
+                "review": "REVIEW ANSWERS",
+                "backToResult": "BACK TO SUMMARY",
+                "yourAnswer": "YOUR ANSWER",
+                "correctAnswer": "CORRECT ANSWER",
+                "flag": "FLAG QUESTION",
+                "unflag": "UNFLAG",
+                "flagged": "FLAGGED",
+                "selectClass": "SELECT EXAM CLASS",
+                "classAB": "CLASS A/B (Advanced)",
+                "classC": "CLASS C (Entry Level)",
+                "startExam": "START EXAM",
+                "qualified": "CONGRATULATIONS! ELIGIBLE FOR {class} LICENSE",
+                "notQualified": "FAILED - NO LICENSE AWARDED"
+            }
+        },
+        "lesson": {
+            "welcome": "Welcome",
+            "objective": "OBJECTIVE",
+            "simulation": "SIMULATION ENVIRONMENT",
+            "next": "NEXT LESSON",
+            "prev": "PREV LESSON",
+            "complete": "COMPLETE"
+        }
+    }
+}

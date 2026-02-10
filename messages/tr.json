@@ -1,0 +1,276 @@
+{
+    "Meta": {
+        "title": "TA Radyo Portalı | Amatör Telsizcilik Merkezi",
+        "description": "Türkiye'nin en kapsamlı amatör telsizcilik kaynağı. ATLAS haritaları, ATÖLYE hesaplayıcıları ve AKADEMİ eğitimleri ile donatılmış premium portal."
+    },
+    "Hero": {
+        "title": "AMATÖR TELSİZCİLİK PORTALI",
+        "subtitle": "Gelişmiş Araçlar. Küresel Bağlantı. Sınırsız Keşif.",
+        "cta": "KEŞFETMEYİ BAŞLAT",
+        "scrollHint": "Daha fazlası için kaydır"
+    },
+    "Navigation": {
+        "home": "ANA SAYFA",
+        "atlas": "ATLAS",
+        "atolye": "ATÖLYE",
+        "akademi": "AKADEMİ",
+        "language": "Dil"
+    },
+    "Modules": {
+        "atlas": {
+            "title": "ATLAS",
+            "subtitle": "İNTERAKTİF HARİTA",
+            "description": "Röle istasyonları, uydu konumları ve küresel telsiz ağlarını gerçek zamanlı keşfedin.",
+            "features": [
+                "Canlı Röle Haritası",
+                "Uydu İzleme",
+                "Propagasyon Verileri"
+            ]
+        },
+        "atolye": {
+            "title": "ATÖLYE",
+            "subtitle": "MÜHENDİSLİK ARAÇLARI",
+            "description": "Anten tasarımı, RF hesaplamaları ve teknik araçlarla projelerinizi hayata geçirin.",
+            "features": [
+                "Anten Hesaplayıcı",
+                "SWR Analizi",
+                "Bant Planları"
+            ]
+        },
+        "akademi": {
+            "title": "AKADEMİ",
+            "subtitle": "EĞİTİM MERKEZİ",
+            "description": "Sınav hazırlığından ileri düzey tekniklere, interaktif eğitim modülleri.",
+            "features": [
+                "Sınav Simülatörü",
+                "CW Eğitimi",
+                "Video Dersler"
+            ]
+        }
+    },
+    "Stats": {
+        "repeaters": "Aktif Röle",
+        "users": "Kullanıcı",
+        "countries": "Ülke",
+        "uptime": "Çalışma Süresi"
+    },
+    "Footer": {
+        "copyright": "© 2026 TA Radyo Portalı. Tüm hakları saklıdır.",
+        "callsign": "73 de TA3ABC",
+        "links": {
+            "privacy": "Gizlilik",
+            "terms": "Kullanım Şartları",
+            "contact": "İletişim"
+        }
+    },
+    "Common": {
+        "loading": "Yükleniyor...",
+        "error": "Bir hata oluştu",
+        "retry": "Tekrar Dene",
+        "learnMore": "DAHA FAZLA",
+        "viewAll": "TÜMÜNÜ GÖR"
+    },
+    "Atlas": {
+        "title": "ATLAS",
+        "subtitle": "İNTERAKTİF HARİTA",
+        "coordinates": "KOORDİNATLAR",
+        "legend": "LEJANT",
+        "activeRelay": "AKTİF RÖLE",
+        "maintenanceRelay": "BAKIMDA",
+        "targetLocked": "HEDEF_KİLİTLENDİ",
+        "status": "DURUM",
+        "freq": "FREKANS",
+        "tone": "TON",
+        "loc": "KONUM",
+        "connectionEstablished": "BAĞLANTI_KURULDU",
+        "spaceWeather": {
+            "title": "UZAY HAVASI",
+            "sfi": "SOLAR FLUX (SFI)",
+            "kIndex": "PLANETARY K-INDEX",
+            "aIndex": "A-INDEX",
+            "conditions": "PROPAGASYON KOŞULLARI"
+        },
+        "dxCluster": {
+            "title": "CANLI DX KÜMESİ",
+            "spot": "DX SPOT",
+            "de": "DE",
+            "freq": "FRQ"
+        },
+        "matrixLog": {
+            "title": "MATRİS KAYDI",
+            "listening": "DİNLENİYOR...",
+            "traffic": "DMR TRAFİĞİ"
+        },
+        "loading": "Arazi verileri yükleniyor...",
+        "iss": {
+            "telemetry": "CANLI TELEMETRİ",
+            "orbit": "YÖRÜNGE",
+            "lat": "ENLEM",
+            "lon": "BOYLAM"
+        },
+        "Meta": {
+            "title": "ATLAS | İnteraktif Telsiz Haritası",
+            "description": "Canlı amatör telsiz röle haritası ve uydu takip sistemi."
+        }
+    },
+    "Atolye": {
+        "title": "ATÖLYE",
+        "subtitle": "MÜHENDİSLİK ARAÇLARI",
+        "description": "Profesyonel telsizcilik hesaplamaları ve araçları.",
+        "locked": "KİLİTLİ_MODÜL",
+        "tools": {
+            "dipole": {
+                "title": "DİPOL_HESAPLAYICI",
+                "freqLabel": "FREKANS (MHz)",
+                "totalLength": "TOPLAM BOY (L)",
+                "legLength": "BACAK_BOYU",
+                "invalidInput": "GEÇERSİZ_GİRİŞ",
+                "formula": "FORMÜL: L = 142.5 / f (MHz)"
+            },
+            "swr": {
+                "title": "SWR_ANALİZÖRÜ",
+                "swrLabel": "SWR DEĞERİ",
+                "returnLoss": "DÖNÜŞ KAYBI (Return Loss)",
+                "reflectionCoef": "YANSIMA KATSAYISI",
+                "match": "EŞLEŞME_DURUMU",
+                "formula": "FORMÜL: RL = -20 log10((SWR-1)/(SWR+1))"
+            },
+            "coax": {
+                "title": "KABLO KAYIP HESABI",
+                "label": "COAX CABLE LOSS CALCULATOR",
+                "cableType": "KABLO TİPİ",
+                "frequency": "FREKANS (MHz)",
+                "length": "UZUNLUK (Metre)",
+                "power": "GİRİŞ GÜCÜ (Watt)",
+                "loss": "KAYIP (dB)",
+                "efficiency": "VERİMLİLİK",
+                "outputPower": "ÇIKIŞ GÜCÜ"
+            },
+            "yagi": {
+                "title": "YAGİ TASARIMCISI",
+                "label": "YAGI-UDA ANTENNA BUILDER",
+                "frequency": "FREKANS (MHz)",
+                "elements": "ELEMAN SAYISI (3-7)",
+                "reflector": "REFLEKTÖR",
+                "driven": "SÜRÜCÜ (DRIVEN)",
+                "director": "YÖNLENDİRİCİ",
+                "boom": "BOOM UZUNLUĞU",
+                "gain": "TAHMİNİ KAZANÇ"
+            },
+            "battery": {
+                "title": "SAHA ENERJİ HESABI",
+                "label": "FIELD DAY BATTERY ESTIMATOR",
+                "capacity": "AKÜ KAPASİTESİ (Ah)",
+                "voltage": "VOLTAJ (V)",
+                "txPower": "TX GÜCÜ (W)",
+                "rxCurrent": "RX AKIMI (A)",
+                "dutyCycle": "TX/RX DÖNGÜSÜ (%)",
+                "avgCurrent": "ORTALAMA AKIM",
+                "totalTime": "TAHMİNİ SÜRE (Saat)"
+            },
+            "rfsafety": {
+                "title": "RF GÜVENLİK MESAFESİ",
+                "label": "RF SAFETY DISTANCE (PUBLIC)",
+                "power": "ÇIKIŞ GÜCÜ (Ortalama Watt)",
+                "gain": "ANTEN KAZANCI (dBi)",
+                "frequency": "FREKANS (MHz)",
+                "minDistance": "MİNİMUM GÜVENLİ MESAFE",
+                "uncontrolled": "GENEL HALK İÇİN (UNCONTROLLED)",
+                "controlled": "KONTROLLÜ ORTAM (CONTROLLED)",
+                "note": "FCC OET-65 standartlarına göre hesaplanmıştır."
+            },
+            "qth": {
+                "title": "QTH ÇEVİRİCİ",
+                "label": "GRID LOCATOR CONVERTER",
+                "inputLat": "ENLEM",
+                "inputLng": "BOYLAM",
+                "inputGrid": "MAIDENHEAD GRID",
+                "btnToGrid": "GRID'E ÇEVİR",
+                "btnToCoord": "KOORDİNATA ÇEVİR"
+            },
+            "azimuth": {
+                "title": "AZIMUTH HARİTASI",
+                "label": "BEAM HEADING FINDER",
+                "target": "HEDEF KONUM/ÜLKE",
+                "bearing": "PUSULA AÇISI (BEARING)"
+            }
+        }
+    },
+    "Academy": {
+        "title": "AKADEMİ",
+        "subtitle": "EĞİTİM MERKEZİ",
+        "modules": {
+            "regulations": {
+                "title": "MEVZUAT",
+                "desc": "Yasal Çerçeve ve Lisanslama"
+            },
+            "technical": {
+                "title": "TEKNİK",
+                "desc": "Elektronik ve Propagasyon"
+            },
+            "operating": {
+                "title": "İŞLETME",
+                "desc": "Protokoller ve Etik"
+            }
+        },
+        "status": {
+            "locked": "KİLİTLİ",
+            "unlocked": "ERİŞİLEBİLİR",
+            "start": "MODÜLÜ_BAŞLAT",
+            "progress": "İLERLEME"
+        },
+        "quiz": {
+            "title": "RASTGELE_SORU",
+            "submit": "CEVABI_GÖNDER",
+            "correct": "DOĞRU_CEVAP",
+            "wrong": "SİNYAL_KAYBI (YANLIŞ)",
+            "next": "SONRAKİ_VERİ_PAKETİ"
+        },
+        "dashboard": {
+            "mandatory": "ZORUNLU_MODÜLLER",
+            "daily": "SORU_BANKASI",
+            "level": "SEVİYE",
+            "xp": "XP",
+            "leaderboard": "LİDERLİK_TABLOSU (ÇEVRİMDIŞI)",
+            "lesson": "DERS_GÖRÜNÜMÜ",
+            "complete": "DERSİ_TAMAMLA",
+            "exam": {
+                "title": "SINAV SİMÜLATÖRÜ",
+                "result": "GÖREV ÖZETİ",
+                "passed": "BAŞARILI - GÖREV TAMAMLANDI",
+                "failed": "BAŞARISIZ - SİNYAL KAYBI",
+                "finish": "SINAVI BİTİR",
+                "score": "SKOR",
+                "save": "SKORUNU KAYDET",
+                "skip": "GEÇ (KAYDETME)",
+                "categories": {
+                    "regulations": "MEVZUAT",
+                    "technical": "TEKNİK",
+                    "operating": "İŞLETME"
+                },
+                "focus": "ODAKLAN: {category}",
+                "review": "CEVAPLARI İNCELE",
+                "backToResult": "ÖZETE DÖN",
+                "yourAnswer": "SENİN CEVABIN",
+                "correctAnswer": "DOĞRU CEVAP",
+                "flag": "İŞARETLE",
+                "unflag": "İŞARETİ KALDIR",
+                "flagged": "İŞARETLİ",
+                "selectClass": "SINAV SINIFI SEÇİN",
+                "classAB": "A/B SINIFI (Teknik & Detaylı)",
+                "classC": "C SINIFI (Temel Seviye)",
+                "startExam": "SINAVI BAŞLAT",
+                "qualified": "TEBRİKLER! {class} BELGESİ ALMAYA HAK KAZANDINIZ",
+                "notQualified": "BAŞARISIZ - BELGE ALAMADINIZ"
+            }
+        },
+        "lesson": {
+            "welcome": "Hoşgeldiniz",
+            "objective": "AMAÇ",
+            "simulation": "SİMÜLASYON ORTAMI",
+            "next": "SONRAKİ DERS",
+            "prev": "ÖNCEKİ DERS",
+            "complete": "TAMAMLA"
+        }
+    }
+}
