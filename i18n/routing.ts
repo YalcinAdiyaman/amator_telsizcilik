@@ -9,7 +9,7 @@ export const routing = defineRouting({
     defaultLocale: 'tr',
 
     // URL'de varsayılan dil prefix'i gösterilsin mi?
-    localePrefix: 'as-needed'
+    localePrefix: 'always'
 });
 
 // Navigation hook'ları - Link, redirect, usePathname, useRouter
