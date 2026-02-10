@@ -4,7 +4,7 @@ import { routing } from "@/i18n/routing";
 import { notFound } from "next/navigation";
 import AmbientOverlay from "@/components/AmbientOverlay";
 
-export function generateStaticParams() {
+export async function generateStaticParams() {
     return routing.locales.map((locale) => ({ locale }));
 }
 
